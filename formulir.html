@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Registrasi & Login</title>
+    <link rel="stylesheet" href=style.css>
+</head>
+<body>
+
+    <div class="container" id="registerForm">
+        <h2>Registrasi</h2>
+        <input type="text" id="regUsername" placeholder="Username" required>
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <input type="password" id="regPassword2" placeholder="Konfirmasi Password" required>
+        <input type="file" id="inputFile" placeholder="Upload Foto Profil" required>
+        <button onclick="register()">Daftar</button>
+        <p class="toggle" onclick="toggleForm()">Sudah punya akun? Login di sini</p>
+    </div>
+
+    <div class="container" id="loginForm" style="display: none;">
+        <h2>Login</h2>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button onclick="login()">Masuk</button>
+        <p class="toggle" onclick="toggleForm()">Belum punya akun? Daftar di sini</p>
+    </div>
+
+    <script>
+        function toggleForm() {
+            let regForm = document.getElementById('registerForm');
+            let logForm = document.getElementById('loginForm');
+
+            if (regForm.style.display === "none") {
+                regForm.style.display = "block";
+                logForm.style.display = "none";
+            } else {
+                regForm.style.display = "none";
+                logForm.style.display = "block";
+            }
+        }
+
+        function register() {
+            alert("Registrasi berhasil! Silakan login.");
+            toggleForm();
+        }
+
+        function login() {
+            alert("Login berhasil!");
+        }
+    </script>
+
+</body>
+</html>
